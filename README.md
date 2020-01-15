@@ -52,6 +52,7 @@ Flutter项目实战训练，ui界面和接口是基于开源项目 [Flutter_Mall
   <img src="https://raw.githubusercontent.com/guixianleng/images-store/master/images/flutter_page2.png" width="300"/>
   <img src="https://raw.githubusercontent.com/guixianleng/images-store/master/images/flutter_page3.png" width="300"/>
 </div>
+
 ## 第三方框架
 | 插件名 | 用处 |
 |--| -- |
@@ -63,12 +64,8 @@ Flutter项目实战训练，ui界面和接口是基于开源项目 [Flutter_Mall
 
 ## Flutter学习资料
 
-[Dart语言](https://dart.dev/)
-
-[Flutter官方文档](https://flutter.dev/docs)
-
-[Flutter实战](https://book.flutterchina.club/)
-
-[flutter-go](https://github.com/alibaba/flutter-go)
-
-[移动电商项目](https://jspang.com/detailed?id=53)
+- [Dart语言](https://dart.dev/)
+- [Flutter官方文档](https://flutter.dev/docs)
+- [Flutter实战](https://book.flutterchina.club/)
+- [flutter-go](https://github.com/alibaba/flutter-go)
+- [移动电商项目](https://jspang.com/detailed?id=53)
