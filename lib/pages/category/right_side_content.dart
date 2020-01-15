@@ -53,11 +53,26 @@ class _RightSideContentState extends State<RightSideContent> {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     mainAxisSpacing: 10.0,
-                    childAspectRatio: 0.95,
+                    childAspectRatio: 0.80,
                     crossAxisSpacing: 20.0
                   ),
                   itemBuilder: (BuildContext context, int index) {
-                    return _rightInkWell(childCategory.childCategoryList[index]['name']);
+                    var goodsInfo = childCategory.childCategoryList[index];
+                    return GestureDetector(
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        alignment: Alignment.center,
+                        child: Center(
+                          child: Column(
+                            children: <Widget>[
+                              _goodsImage(goodsInfo['picUrl']),
+                              _goodsName(goodsInfo['name']),
+                            ],
+                          ),
+                        )
+                      ),
+                      onTap: () => _clickItem(goodsInfo['id']),
+                    );
                   },
                 ),
                 Padding(
@@ -71,40 +86,30 @@ class _RightSideContentState extends State<RightSideContent> {
     );
   }
 
-  _clickItem (String id) {
+  _clickItem (int id) {
     print('点击了 => ${id}');
   }
 
-  // 子项
-  Widget _rightInkWell(String item) {
-    return GestureDetector(
-      child: Container(
-        padding: EdgeInsets.fromLTRB(5.0, 10.0, 5.0, 10.0),
-        alignment: Alignment.center,
-        width: ScreenUtil().setWidth(100.0),
-        child: Card(
-          child: Column(
-            children: <Widget>[
-              Image.network(
-                'http://yanxuan.nosdn.127.net/927bc33f7ae2895dd6c11cf91f5e3228.png',
-                fit: BoxFit.fill,
-                height: ScreenUtil().setHeight(60.0),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 5.0),
-              ),
-              Text(
-                item,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14.0, color: Colors.black),
-              ),
-            ],
-          ),
-        )
+  // 商品图片
+  Widget _goodsImage(url){
+    return  Image.network(
+      url,
+      width: ScreenUtil().setWidth(740),
+    );
+  }
+
+  // 商品名称
+  Widget _goodsName(name){
+    return Container(
+      width: ScreenUtil().setWidth(730),
+      child: Text(
+        name,
+        maxLines: 1,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: ScreenUtil().setSp(24)
+        ),
       ),
-      onTap: () => _clickItem(item),
     );
   }
 }
