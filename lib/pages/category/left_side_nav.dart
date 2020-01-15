@@ -75,8 +75,9 @@ class _LeftSideNavState extends State<LeftSideNav> {
         height: ScreenUtil().setHeight(100.0),
         padding: EdgeInsets.only(left: 10.0, top: 15.0),
         decoration: BoxDecoration(
-          color: isClick ? Colors.green[300] : Colors.white,
+          color: Colors.white,
           border: Border(
+            right: BorderSide(width: isClick ? 3 : 0, color: isClick ? Colors.deepOrange : Colors.black12),
             bottom: BorderSide(width: 1.0, color: Colors.black12)
           )
         ),
@@ -85,6 +86,7 @@ class _LeftSideNavState extends State<LeftSideNav> {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
+            color: isClick ? Colors.deepOrange : Colors.black,
             fontSize: ScreenUtil().setSp(28)
           )
         ),

@@ -16,6 +16,7 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('购物车'),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(

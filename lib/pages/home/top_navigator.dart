@@ -9,11 +9,13 @@ class TopNavigator extends StatelessWidget {
 
   Widget _gridViewItemUI(BuildContext context, item) {
     return InkWell(
-      child: Column(
-        children: <Widget>[
-          Image.network(item['iconUrl'],width: ScreenUtil().setWidth(60)),
-          Text(item['name'])
-        ],
+      child: Center(
+        child: Column(
+          children: <Widget>[
+            Image.network(item['iconUrl'],width: ScreenUtil().setWidth(60)),
+            Text(item['name'])
+          ],
+        ),
       ),
       onTap: () {
         print('点击了导航');
@@ -32,7 +34,7 @@ class TopNavigator extends StatelessWidget {
         // 禁用 GridView 的滚动
         physics: NeverScrollableScrollPhysics(),
         padding: EdgeInsets.all(4.0),
-        children: navigatorList.map((item){
+        children: navigatorList.map((item) {
           return _gridViewItemUI(context, item);
         }).toList(),
       ),

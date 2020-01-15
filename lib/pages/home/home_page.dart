@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
     return Scaffold(
       appBar: AppBar(
         title: Text('首页'),
+        centerTitle: true,
       ),
       body: FutureBuilder(
         future: _homeService.getHomePageData(),
